@@ -5,7 +5,7 @@ import './less/index.less'
 // // testing out my skills 
 //1
 const navTags = document.querySelectorAll('nav a');
-console.log(navTags);
+// console.log(navTags);
 
 navTags.forEach( tag => {
     tag.addEventListener('mouseover',()=>{
@@ -42,3 +42,27 @@ document.body.addEventListener('click',(e) => {
 document.body.addEventListener('dblclick',(e) =>{
     e.target.outerHTML = '';
 })
+
+// 7 keydown
+window.addEventListener('keydown', e=>{
+    if(e.key == 6){
+        document.body.innerHTML='<h1>You ran order 66</h1>';
+    }
+})
+// 8 mousemove
+document.body.addEventListener('mousemove', e =>{
+    const {clientX,clientY} = e;
+    // console.log(`mouse is at ${clientX}, ${clientY}`)
+})
+// 9 mousenter
+// 10 mouseleave
+const destinations = document.querySelectorAll('.destination')
+console.log(destinations);
+for ( let destination of destinations ){
+    destination.addEventListener('mouseenter',()=>{
+        destination.style.fontWeight = 'bold';
+    })
+    destination.addEventListener('mouseleave', () =>{
+        destination.style.fontWeight = 'initial';
+    } )
+}
